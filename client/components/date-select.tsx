@@ -8,25 +8,25 @@ export default function DateSelect() {
   const options = [
     {
       id: 0,
-      period: 'Today'
+      period: 'Todays',
     },
     {
       id: 1,
-      period: 'Last 7 Days'
+      period: 'Last 7 Days',
     },
     {
       id: 2,
-      period: 'Last Month'
+      period: 'Last Month',
     },
     {
       id: 3,
-      period: 'Last 12 Months'
+      period: 'Last 12 Months',
     },
     {
       id: 4,
-      period: 'All Time'
-    }
-  ]
+      period: 'All Time',
+    },
+  ];
 
   const [selected, setSelected] = useState<number>(2)
 
