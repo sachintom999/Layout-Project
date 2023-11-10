@@ -9,9 +9,12 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
+    
+    - name: 🚚 Check out code
       uses: actions/checkout@v3
-      run: mv -f client/* .
+
+    - name: 🚚 Move client files
+      run: mv -f client/*
 
     - name: Use Node.js 16
       uses: actions/setup-node@v2
