@@ -8,7 +8,7 @@ export default function DateSelect() {
   const options = [
     {
       id: 0,
-      period: 'Todayss',
+      period: 'Todaysss',
     },
     {
       id: 1,
