@@ -27,3 +27,5 @@ const layoutSchema = new Schema<Layout>({
 const LayoutModel = mongoose.model("Layout", layoutSchema)
 
 export default LayoutModel
+
+
