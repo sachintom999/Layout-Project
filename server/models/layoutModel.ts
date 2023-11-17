@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from "mongoose"
+import mongoose, { Document, Schema } from "mongoose"
 
 interface Location {
     lat: number
@@ -17,15 +17,16 @@ const locationSchema = new Schema<Location>({
     lat: { type: Number, required: true },
 })
 
-const layoutSchema = new Schema<Layout>({
-    name: { type: String, required: true },
-    description: { type: String, required: true },
-    location: { type: locationSchema, required: true },
-    image: { type: String, required: true },
-})
+const layoutSchema = new Schema<Layout>(
+    {
+        name: { type: String, required: true },
+        description: { type: String, required: true },
+        location: { type: locationSchema, required: true },
+        image: { type: String, required: true },
+    },
+    { timestamps: true }
+)
 
 const LayoutModel = mongoose.model("Layout", layoutSchema)
 
 export default LayoutModel
-
-
