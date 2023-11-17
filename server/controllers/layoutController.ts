@@ -28,3 +28,8 @@ export const createLayout = async (req: Request, res: Response) => {
         return res.status(500).json(error)
     }
 }
+
+export const getLayouts = async (req: Request, res: Response) => {
+    const layouts = await Layout.find({})
+    return res.status(200).json(layouts)
+}
