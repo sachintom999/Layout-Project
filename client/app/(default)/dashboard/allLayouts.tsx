@@ -1,10 +1,24 @@
-export default function AllLayouts() {
+type AddNewLayoutProps = {
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function AllLayouts({ setModal }: AddNewLayoutProps) {
   return (
     <div className="col-span-full xl:col-span-6 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
-      <header className="px-5 py-4 border-b border-slate-100 dark:border-slate-700">
+      <header className="flex flex-row justify-between px-5 py-4 border-b border-slate-100 dark:border-slate-700">
         <h2 className="font-semibold text-slate-800 dark:text-slate-100">
-          All Layoutss
+          All Layouts
         </h2>
+        <button
+          className="btn bg-indigo-500 hover:bg-indigo-600 text-white"
+          onClick={() => setModal(true)}>
+          <svg
+            className="w-4 h-4 fill-current opacity-50 shrink-0"
+            viewBox="0 0 16 16">
+            <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
+          </svg>
+          <span className="hidden xs:block ml-2">Add New Layout</span>
+        </button>
       </header>
       <div className="p-3">
         {/* Table */}
