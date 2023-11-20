@@ -1,0 +1,21 @@
+{
+    "_id": "4313e091-0195-4818-b4a5-dcaa21ad6f88",
+    "colName": "Global",
+    "created": "2023-11-20T15:38:02.877Z",
+    "sortNum": 10000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b0328a5f-effc-4780-bcea-d581fd8b1031",
+            "colId": "4313e091-0195-4818-b4a5-dcaa21ad6f88",
+            "containerId": "",
+            "name": "Login",
+            "url": "",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-20T15:38:12.529Z",
+            "modified": "2023-11-20T15:38:12.529Z",
+            "headers": []
+        }
+    ]
+}
