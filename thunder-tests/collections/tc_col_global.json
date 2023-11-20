@@ -16,6 +16,25 @@
             "created": "2023-11-20T15:38:12.529Z",
             "modified": "2023-11-20T15:38:12.529Z",
             "headers": []
+        },
+        {
+            "_id": "c01810c7-397f-41ae-9bd2-b3210e28118e",
+            "colId": "4313e091-0195-4818-b4a5-dcaa21ad6f88",
+            "containerId": "",
+            "name": "Me",
+            "url": "http://localhost:4000/me",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-11-20T15:43:51.811Z",
+            "modified": "2023-11-20T15:44:43.415Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"user\": \"seller\"\n}",
+                "form": []
+            },
+            "tests": []
         }
     ]
 }
