@@ -2,6 +2,7 @@
   "name": "layoutproject",
   "homepage": "https://lp.inspiringthing.com/",
   "version": "0.1.0",
+  "proxy": "https://speedritual.com/",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,7 +24,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-flatpickr": "^3.10.13",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "zustand": "^4.4.6"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.6",
