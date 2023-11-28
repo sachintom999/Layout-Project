@@ -7,8 +7,9 @@ import {
 import { useMemo, useState } from 'react';
 
 export default function MapView() {
+
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyCJXt1hFktTaWxTfLymV3DiPdWe8uZzpH4',
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY,
   });
   const center = useMemo(
     () => ({ lat: 12.939525555477744, lng: 77.73138458855705 }),
