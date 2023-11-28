@@ -5,19 +5,23 @@ import { useState } from 'react';
 //   description: 'Plots around bangalore',
 // };
 import AddNewLayout from './AddNewLayout';
-import AllLayouts from './allLayouts';
+import useAppStore from '@/stores/appStore';
+import MapView from './buyer-dashboard/map-view';
+import SellerLayouts from './seller-dashboard/seller-layouts';
+import AllLayouts from './admin-dashboard/all-layouts';
 
 export default function Dashboard() {
-  const [newLayoutModal, setNewLayoutModal] = useState(false);
-  return (
-    <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-[96rem] mx-auto">
-      <div className="sm:flex sm:justify-between sm:items-center mb-5">
-        <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2"></div>
-      </div>
-      <div className="grid grid-cols-12 gap-6">
-        <AllLayouts setModal={setNewLayoutModal} />
-      </div>
-      <AddNewLayout modal={newLayoutModal} setModal={setNewLayoutModal} />
-    </div>
-  );
+  const { user } = useAppStore((state) => state);
+
+  const dashboardRender = (type) => {
+    switch (type) {
+      case 'Buyer':
+        return <MapView />;
+      case 'Seller':
+        return <SellerLayouts />;
+      default:
+        return <AllLayouts />;
+    }
+  };
+  return <>{dashboardRender(user?.role)}</>;
 }

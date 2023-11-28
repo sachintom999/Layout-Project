@@ -1,12 +1,6 @@
 'use client';
 import Sidebar from '@/components/ui/sidebar';
 import Header from '@/components/ui/header';
-import getSelfApiFn from '@/api/selfApi';
-import usePostHook from '@/hooks/usePostHook';
-import getLayouts from '@/api/getLayouts';
-
-import { useEffect, useState } from 'react';
-import revalidateApi from '@/api/revalidateFn';
 export default function DefaultLayout({
   children,
 }: {

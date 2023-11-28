@@ -29,7 +29,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "hooks/usePostData.js"
+    "hooks/usePostData.js",
+    "api/get-self.js"
   ],
   "exclude": ["node_modules"]
 }

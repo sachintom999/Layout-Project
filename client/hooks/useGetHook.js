@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 
 const useDataFetching = (url) => {
-  const [data, setData] = useState(null);
+  const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch('https://speedritual.com' + url, {
+          next: { tags: ['layouts'] },
+        });
         const result = await response.json();
-        setData(result);
+        setResponse(result);
       } catch (error) {
         setError(error);
       } finally {
@@ -21,7 +23,7 @@ const useDataFetching = (url) => {
     fetchData();
   }, [url]);
 
-  return { data, loading, error };
+  return { response, loading, error };
 };
 
 export default useDataFetching;

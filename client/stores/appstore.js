@@ -1,10 +1,14 @@
 import { create } from 'zustand';
-
-const useStore = create((set, get) => ({
-  user: null,
-  setUser: (user) => {
-    set({ user });
-  },
-}));
-
-export default useStore;
+import zukeeper from 'zukeeper';
+const useAppStore = create(
+  zukeeper((set, get) => ({
+    user: null,
+    setUser: (user) => {
+      set({ user });
+    },
+  }))
+);
+if (typeof window !== 'undefined') {
+  window.store = useAppStore;
+}
+export default useAppStore;
