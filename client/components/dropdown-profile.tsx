@@ -4,14 +4,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, Transition } from '@headlessui/react'
 import UserAvatar from '@/public/images/user-avatar-32.png'
-import useStore from '@/stores/appStore';
+import useAppStore from '@/stores/appStore';
 
 export default function DropdownProfile({
   align,
 }: {
   align?: 'left' | 'right';
 }) {
-  const { user } = useStore((state) => state);
+  const { user } = useAppStore((state) => state);
   return (
     <Menu as="div" className="relative inline-flex">
       <Menu.Button className="inline-flex justify-center items-center group">

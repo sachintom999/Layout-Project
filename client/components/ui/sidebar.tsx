@@ -8,11 +8,11 @@ import { getBreakpoint } from '../utils/utils'
 import SidebarLinkGroup from './sidebar-link-group'
 import SidebarLink from './sidebar-link'
 import Logo from './logo'
-import getSelfApiFn from '@/api/selfApi';
-import useStore from '@/stores/appStore';
+import getSelf from '@/api/get-self';
+import useAppStore from '@/stores/appStore';
 
 export default function Sidebar() {
-  const { setUser } = useStore((state) => state);
+  const { setUser } = useAppStore((state) => state);
   const sidebar = useRef<HTMLDivElement>(null);
   const { sidebarOpen, setSidebarOpen } = useAppProvider();
   const [sidebarExpanded, setSidebarExpanded] = useState<boolean>(false);
@@ -23,9 +23,9 @@ export default function Sidebar() {
   const expandOnly =
     !sidebarExpanded && (breakpoint === 'lg' || breakpoint === 'xl');
   const [userType, setUserType] = useState({
-    user: 'seller',
+    user: 'admin',
   });
-  const { response, loading, error } = getSelfApiFn(userType);
+  const { response, loading, error } = getSelf(userType);
   useEffect(() => {
     if (response) {
       setUser(response);
