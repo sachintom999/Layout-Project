@@ -1,7 +1,8 @@
 import getLayouts from '@/api/get-layouts';
-import mapImage from '../../../../public/images/google-maps.png';
+import mapImage from '@/public/images/google-maps.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 
 export default function SellerLayouts() {
   const { layouts, loading, error } = getLayouts();
