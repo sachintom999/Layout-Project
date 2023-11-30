@@ -2,10 +2,11 @@ import getLayouts from '@/api/get-layouts';
 import mapImage from '@/public/images/google-maps.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function SellerLayouts() {
   const { layouts, loading, error } = getLayouts();
+
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-[96rem] mx-auto">
       <div className="grid grid-cols-12 gap-6">
@@ -14,7 +15,7 @@ export default function SellerLayouts() {
             <div className="w-full">
               <div className="space-y-2">
                 {layouts?.map((layout, key) => (
-                  <Link href={`/dashboard/${layout?._id}`} key={key}>
+                  <Link href={`/property/${layout?._id}`} key={key}>
                     <div
                       className={`shadow-lg rounded-sm border px-5 py-4 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700
           }`}>

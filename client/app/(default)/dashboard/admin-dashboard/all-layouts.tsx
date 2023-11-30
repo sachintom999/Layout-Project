@@ -2,7 +2,7 @@ import getLayouts from '@/api/get-layouts';
 import mapImage from '../../../../public/images/google-maps.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import SearchForm from '@/components/search-form';
+import React from 'react';
 
 export default function AllLayouts() {
   const { layouts, loading, error } = getLayouts();
@@ -56,7 +56,7 @@ export default function AllLayouts() {
               </div>
               <div className="space-y-2">
                 {layouts?.map((layout, key) => (
-                  <Link href={`/dashboard/${layout?._id}`} key={key}>
+                  <Link href={`/property/${layout?._id}`} key={key}>
                     <div
                       className={`shadow-lg rounded-sm border px-5 py-4 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700
           }`}>
