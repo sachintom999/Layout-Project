@@ -10,6 +10,7 @@ import SidebarLink from './sidebar-link'
 import Logo from './logo'
 import getSelf from '@/api/get-self';
 import useAppStore from '@/stores/appStore';
+import React from 'react';
 
 export default function Sidebar() {
   const { setUser } = useAppStore((state) => state);

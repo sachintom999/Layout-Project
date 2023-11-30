@@ -19,6 +19,8 @@ export default function Dashboard() {
         return <MapView />;
       case 'Seller':
         return <SellerLayouts />;
+      case 'Admin':
+        return <AllLayouts />;
       default:
         return <AllLayouts />;
     }
