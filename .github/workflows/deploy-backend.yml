@@ -17,7 +17,7 @@ jobs:
               env:
                   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
               run: |
-                  echo "$SSH_PRIVATE_KEY" > ~/keyfile
-                  chmod 600 ~/keyfile
+                  echo "$SSH_PRIVATE_KEY" > keyfile
+                  chmod 600 keyfile
                   mkdir -p ~/.ssh
-                  ssh -t -i ~/keyfile ubuntu@13.127.204.211 "bash ~/deploy.sh"
+                  ssh -t -i keyfile ubuntu@13.127.204.211 "bash ~/deploy.sh"
